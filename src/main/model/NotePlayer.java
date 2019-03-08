@@ -8,36 +8,26 @@ import java.util.concurrent.ThreadLocalRandom;
 public class NotePlayer {
     private final static Random random = new Random();
 
-    private MidiSynth midiSynth;
-    private int instrument;
+    private MidiSynth midiSynth = new MidiSynth();
+    private int instrument = 10;
     //velocity between 0-127, but very quiet if less than 60
     private int velocity = 100;
     //from 0-127, 60 is middle C
-    private int baseNote;
-    private int tempo;
-    private int noteLength;
-
-
-    //EFFECTS:  constructs NotePlayer with default instrument, middle C as base note, tempo of 0.5s/note,
-    //          note length of 10s
-    public void NotePlayer() {
-        instrument = 1;
-        baseNote = 60;
-        tempo = 500;
-        noteLength = 1000;
-        this.midiSynth = new MidiSynth();
-    }
+    private int baseNote = 60;
+    private int tempo = 300;
 
     //EFFECTS:  constructs NotePlayer with given instrument, base note, tempo at given int/note, note length in ms
-    public void NotePlayer(int instrument, int baseNote, int tempo, int noteLength) {
+    public void NotePlayer(int instrument, int baseNote, int tempo) {
         this.instrument = instrument;
         this.baseNote = baseNote;
         this.tempo = tempo;
-        this.noteLength = noteLength;
+        velocity = 100;
         this.midiSynth = new MidiSynth();
+        midiSynth.open();
     }
 
     public void playString(String input) {
+        midiSynth.open();
         String[] notes = input.split("");
 
         for (String note : notes) {
@@ -45,22 +35,22 @@ public class NotePlayer {
                 pause(tempo);
             } else if (isVowel(note)) {
                 playKeyNote();
-                pause(tempo);
             } else {
-                playAnyNote();
-                pause(tempo);
+                playKeyNote();
+                /*playAnyNote();*/
             }
         }
     }
 
-    //EFFECTS: randomly plays the 1, 3, 5 chord notes based on the baseNote within 4 octaves
+    //EFFECTS: randomly plays the 1, 3, 4, 5 chord notes based on the baseNote within 1 octave
     private void playKeyNote() {
-        int[] octaves = {0, -7, 7, 14, -14};
-        int[] keyNotes = {baseNote, baseNote + 2, baseNote + 4};
+        System.out.println("playing key notes");
+        int[] octaves = {0, 12};
+        int[] keyNotes = {baseNote, baseNote + 4, baseNote + 7,  baseNote + 5};
         int note = keyNotes[random.nextInt(keyNotes.length)] + octaves[random.nextInt(octaves.length)];
 
         midiSynth.play(instrument, note, velocity);
-        pause(noteLength);
+        pause(tempo);
         midiSynth.stop(instrument, note);
     }
 
@@ -70,7 +60,7 @@ public class NotePlayer {
         int note = keyNote + octaves[random.nextInt(octaves.length)];
 
         midiSynth.play(instrument, note, velocity);
-        pause(noteLength);
+        pause(tempo);
         midiSynth.stop(instrument, note);
     }
 
@@ -106,5 +96,18 @@ public class NotePlayer {
 
     public void setTempo(int tempo) {
         this.tempo = tempo;
+    }
+
+    //getters
+    public int getInstrument() {
+        return instrument;
+    }
+
+    public int getBaseNote() {
+        return baseNote;
+    }
+
+    public int getTempo() {
+        return tempo;
     }
 }
