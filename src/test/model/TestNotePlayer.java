@@ -23,6 +23,12 @@ class NotePlayerTest {
 
     @Test
     void testPlayAnyNote() {
-        player.playString("a  aaaaaa");
+        player.playString("assertEquals(10, player.getInstrument())");
+    }
+
+    @Test
+    void testChangeBaseNote() {
+        player.setBaseNote(61);
+        player.playString("assertEquals(10, player.getInstrument())");
     }
 }

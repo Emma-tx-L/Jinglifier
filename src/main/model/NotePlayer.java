@@ -7,6 +7,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class NotePlayer {
     private final static Random random = new Random();
+    private final static int[] octaves = {0, 12, 24};
 
     private MidiSynth midiSynth = new MidiSynth();
     private int instrument = 10;
@@ -34,33 +35,51 @@ public class NotePlayer {
             if (isPause(note)) {
                 pause(tempo);
             } else if (isVowel(note)) {
-                playKeyNote();
+                playSeventhChord();
             } else {
-                playKeyNote();
-                /*playAnyNote();*/
+                playBasicChord();
             }
         }
     }
 
-    //EFFECTS: randomly plays the 1, 3, 4, 5 chord notes based on the baseNote within 1 octave
-    private void playKeyNote() {
-        System.out.println("playing key notes");
-        int[] octaves = {0, 12};
-        int[] keyNotes = {baseNote, baseNote + 4, baseNote + 7,  baseNote + 5};
+    //EFFECTS: randomly plays the major chord notes based on the baseNote within 2 octaves
+    private void playBasicChord() {
+        int[] keyNotes = {baseNote, baseNote + 4, baseNote + 7};
         int note = keyNotes[random.nextInt(keyNotes.length)] + octaves[random.nextInt(octaves.length)];
+        int[] beats = {tempo, tempo, tempo, tempo/2};
 
         midiSynth.play(instrument, note, velocity);
-        pause(tempo);
+        pause(beats[random.nextInt(beats.length)]);
+        midiSynth.stop(instrument, note);
+    }
+
+    private void playSeventhChord() {
+        int[] keyNotes = {baseNote, baseNote + 4, baseNote + 7, baseNote - 1};
+        int note = keyNotes[random.nextInt(keyNotes.length)] + octaves[random.nextInt(octaves.length)];
+        int[] beats = {tempo, tempo, tempo, tempo/2, tempo/4};
+
+        midiSynth.play(instrument, note, velocity);
+        pause(beats[random.nextInt(beats.length)]);
+        midiSynth.stop(instrument, note);
+    }
+
+    private void playSecondChord() {
+        int[] keyNotes = {baseNote, baseNote + 5, baseNote + 1, baseNote + 9};
+        int note = keyNotes[random.nextInt(keyNotes.length)] + octaves[random.nextInt(octaves.length)];
+        int[] beats = {tempo, tempo, tempo, tempo/2, tempo/4};
+
+        midiSynth.play(instrument, note, velocity);
+        pause(beats[random.nextInt(beats.length)]);
         midiSynth.stop(instrument, note);
     }
 
     private void playAnyNote() {
-        int[] octaves = {0, -7, 7, 14, -14};
-        int keyNote = ThreadLocalRandom.current().nextInt(baseNote - 7, baseNote + 7);
+        int keyNote = ThreadLocalRandom.current().nextInt(baseNote - 12, baseNote + 12);
         int note = keyNote + octaves[random.nextInt(octaves.length)];
+        int[] beats = {tempo, tempo, tempo, tempo/2, tempo/4};
 
         midiSynth.play(instrument, note, velocity);
-        pause(tempo);
+        pause(beats[random.nextInt(beats.length)]);
         midiSynth.stop(instrument, note);
     }
 
