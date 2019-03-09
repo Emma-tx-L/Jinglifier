@@ -1,28 +1,26 @@
 package ui;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 
 public class PlayButton extends JFrame {
 
-    public void makePlayButton() {
+    protected JButton button;
 
-        JButton playButton = new JButton("Play");
+    public PlayButton() {
+        createButton();
+    }
 
-        playButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent event) {
-                System.exit(0);
-
-            }
-        });
+    protected void createButton() {
+        button = new JButton("Shape");
+        button = customizeButton(button);
+    }
 
 
-        setTitle("Quit button");
-        setSize(300, 200);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    protected JButton customizeButton(JButton button) {
+        button.setBorderPainted(true);
+        button.setFocusPainted(true);
+        button.setContentAreaFilled(true);
+        return button;
     }
 }

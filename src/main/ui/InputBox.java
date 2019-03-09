@@ -1,17 +1,19 @@
 package ui;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class InputBox extends JTextField {
 
-    JPanel panel;
+    private JComponent parent;
 
-    public InputBox (JPanel parent) {
-
+    public InputBox (JComponent parent) {
         super(1);
-        this.panel = parent;
+        this.parent = parent;
+        setHorizontalAlignment(JTextField.CENTER);
         setText("Write something!");
         setEditable(true);
-
+        setPreferredSize(new Dimension(100,100));
     }
+
 }
