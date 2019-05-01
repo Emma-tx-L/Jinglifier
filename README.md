@@ -1,5 +1,8 @@
 # Jinglifier
 Simple app that takes string input and plays a tune with restricted chords, key, and tempo.  
 
-Added sliders to change tempo, instrument, base key, major/minor key.  
-Added a button to reset.
+
+04/30/2019 Changelog
+- added simple JavaFX UI
+- added sliders to change tempo, instrument, base key, major/minor key 
+- added a button to reset parameters
