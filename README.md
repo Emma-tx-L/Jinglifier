@@ -1,2 +1,2 @@
 # Jinglifier
-text to music
+text to tunes
