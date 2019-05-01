@@ -37,4 +37,10 @@ class NotePlayerTest {
         player.setInstrument(80);
         player.playString("assertEq");
     }
+
+    @Test
+    void testChangeTempo() {
+        player.setTempo(100);
+        player.playString("assertEq");
+    }
 }

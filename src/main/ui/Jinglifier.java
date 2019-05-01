@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
@@ -21,6 +22,7 @@ public class Jinglifier extends Application {
     private Button jingleBtn;
     private Slider noteSlider;
     private Slider instrSlider;
+    private Slider tempoSlider;
 
     private String input;
     private NotePlayer player1;
@@ -41,13 +43,16 @@ public class Jinglifier extends Application {
 
         setUpTextArea();
         setUpJingleButton();
+        setUpMinorButton();
+        setUpResetButton();
+/*        setUpStopButton();*/
         setUpSliders();
 
         primaryStage.setScene(new Scene(grid, WIDTH, HEIGHT));
         primaryStage.show();
     }
 
-    private void setUpSliders() {
+    /*private void setUpSliders() {
         noteSlider = new Slider(22, 108, 60);
         noteSlider.setBlockIncrement(1);
 
@@ -60,9 +65,67 @@ public class Jinglifier extends Application {
         GridPane.setConstraints(instrSlider, 1, 5);
         grid.getChildren().add(instrSlider);
 
+        tempoSlider = new Slider(100, 800, 200);
+        tempoSlider.setBlockIncrement(20);
+
+        GridPane.setConstraints(tempoSlider, 1, 6);
+        grid.getChildren().add(tempoSlider);
 
         setChangeKeyButton();
         setChangeInstrumentButton();
+        setChangeTempoButton();
+    }
+*/
+    private void setUpSliders() {
+        noteSlider = new Slider(22, 108, player1.BASENOTE);
+        noteSlider.setBlockIncrement(1);
+
+        noteSlider.valueProperty().addListener(
+                (observable, oldvalue, newvalue) ->
+                {
+                    int note = (int) noteSlider.getValue();
+                    player1.setBaseNote(note);
+                } );
+        grid.getChildren().add(noteSlider);
+        GridPane.setConstraints(noteSlider, 2,4);
+
+        instrSlider = new Slider(0, 80, player1.INSTRUMENT);
+        instrSlider.valueProperty().addListener(
+                (observable, oldvalue, newvalue) ->
+                {
+                    int note = (int) instrSlider.getValue();
+                    player1.setInstrument(note);
+                } );
+        instrSlider.setBlockIncrement(1);
+        GridPane.setConstraints(instrSlider, 2, 5);
+        grid.getChildren().add(instrSlider);
+
+        tempoSlider = new Slider(100, 800, player1.TEMPO);
+        tempoSlider.setBlockIncrement(20);
+        tempoSlider.valueProperty().addListener(
+                (observable, oldvalue, newvalue) ->
+                {
+                    int note = (int) tempoSlider.getValue();
+                    player1.setTempo(note);
+                } );
+        GridPane.setConstraints(tempoSlider, 2, 6);
+        grid.getChildren().add(tempoSlider);
+
+        setUpLabels();
+    }
+
+    private void setUpLabels() {
+        Label noteSlider = new Label("Change Key");
+        GridPane.setConstraints(noteSlider, 1, 4);
+        grid.getChildren().add(noteSlider);
+
+        Label instrSlider = new Label("Change Instrument");
+        GridPane.setConstraints(instrSlider, 1, 5);
+        grid.getChildren().add(instrSlider);
+
+        Label tempoSlider = new Label("Change Tempo");
+        GridPane.setConstraints(tempoSlider, 1, 6);
+        grid.getChildren().add(tempoSlider);
     }
 
     private void setChangeKeyButton() {
@@ -97,6 +160,22 @@ public class Jinglifier extends Application {
         grid.getChildren().add(insBtn);
     }
 
+    private void setChangeTempoButton() {
+        Button tempoBtn = new Button();
+        tempoBtn.setText("Change Tempo");
+        tempoBtn.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                int note = (int) tempoSlider.getValue();
+                player1.setTempo(note);
+            }
+        });
+
+        GridPane.setConstraints(tempoBtn, 2,6);
+        grid.getChildren().add(tempoBtn);
+    }
+
     private void setUpJingleButton() {
         jingleBtn = new Button();
         jingleBtn.setText("Jinglify!");
@@ -106,12 +185,65 @@ public class Jinglifier extends Application {
             @Override
             public void handle(ActionEvent event) {
                 input = TEXT.getText();
+                player1.setStop(false);
                 player1.playString(input);
             }
         });
 
         GridPane.setConstraints(jingleBtn, 1,2);
         grid.getChildren().add(jingleBtn);
+    }
+
+    private void setUpStopButton() {
+        Button stopBtn = new Button();
+        stopBtn.setText("Stop");
+        stopBtn.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                player1.setStop(true);
+            }
+        });
+
+        GridPane.setConstraints(stopBtn, 2,2);
+        grid.getChildren().add(stopBtn);
+    }
+
+    private void setUpMinorButton() {
+        final Button minorBtn = new Button();
+        minorBtn.setText("Minor/Major");
+        minorBtn.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                if (player1.getMinor()) {
+                    player1.setMinor(false);
+                } else {
+                    player1.setMinor(true);
+                }
+            }
+        });
+
+        GridPane.setConstraints(minorBtn, 2,2);
+        grid.getChildren().add(minorBtn);
+    }
+
+    private void setUpResetButton() {
+        final Button resetBtn = new Button();
+        resetBtn.setText("Reset");
+        resetBtn.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                player1.reset();
+                instrSlider.setValue(player1.INSTRUMENT);
+                tempoSlider.setValue(player1.TEMPO);
+                noteSlider.setValue(player1.BASENOTE);
+            }
+        });
+
+        GridPane.setConstraints(resetBtn, 1,7, 2, 1);
+        grid.getChildren().add(resetBtn);
     }
 
     private void setUpTextArea() {
