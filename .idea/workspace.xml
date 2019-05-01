@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09565c5a-009b-4548-a4c8-f78edefb8ead" name="Default Changelist" comment="attempting to make UI">
-      <change beforePath="$PROJECT_DIR$/src/main/ui/InputBox.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/Jinglifier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/PlayButton.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/UI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/NotePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/NotePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/Jinglifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/Jinglifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/model/TestNotePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/model/TestNotePlayer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,7 +24,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/sound/MidiSynth.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2691">
+            <state relative-caret-position="1702">
               <caret line="121" column="34" selection-start-line="121" selection-start-column="34" selection-end-line="121" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -35,27 +34,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/model/TestNotePlayer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#553#554#0" expanded="true" />
-                <element signature="e#630#631#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/model/NotePlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-138">
-              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-2221">
+              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -63,14 +45,18 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/ui/Jinglifier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            <state relative-caret-position="313">
+              <caret line="91" column="44" lean-forward="true" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#169#170#0" expanded="true" />
                 <element signature="e#197#198#0" expanded="true" />
-                <element signature="e#1063#1278#0" expanded="true" />
-                <element signature="e#1277#1278#0" expanded="true" />
+                <element signature="e#1655#1886#0" expanded="true" />
+                <element signature="e#1885#1886#0" expanded="true" />
+                <element signature="e#2355#2586#0" expanded="true" />
+                <element signature="e#2585#2586#0" expanded="true" />
+                <element signature="e#2639#2854#0" expanded="true" />
+                <element signature="e#2853#2854#0" expanded="true" />
                 <element signature="e#1210#1211#0" expanded="true" />
                 <element signature="e#1251#1252#0" expanded="true" />
               </folding>
@@ -96,6 +82,20 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/model/TestNotePlayer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#553#554#0" expanded="true" />
+                <element signature="e#630#631#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -117,12 +117,12 @@
         <option value="$PROJECT_DIR$/src/test/TestNotePlayer.java" />
         <option value="$PROJECT_DIR$/src/test/model/NotePlayerTest.groovy" />
         <option value="$PROJECT_DIR$/src/main/sound/MidiSynth.java" />
-        <option value="$PROJECT_DIR$/src/main/model/NotePlayer.java" />
-        <option value="$PROJECT_DIR$/src/test/model/TestNotePlayer.java" />
         <option value="$PROJECT_DIR$/src/main/ui/UI.java" />
         <option value="$PROJECT_DIR$/src/main/ui/PlayButton.java" />
         <option value="$PROJECT_DIR$/src/main/ui/InputBox.java" />
         <option value="$PROJECT_DIR$/src/main/old_ui/PlayButton.java" />
+        <option value="$PROJECT_DIR$/src/main/model/NotePlayer.java" />
+        <option value="$PROJECT_DIR$/src/test/model/TestNotePlayer.java" />
         <option value="$PROJECT_DIR$/src/main/ui/Jinglifier.java" />
       </list>
     </option>
@@ -292,7 +292,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NotePlayerTest.testConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NotePlayerTest.testChangeInstrument" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="src" />
       <extension name="coverage">
         <pattern>
@@ -302,7 +302,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="model" />
       <option name="MAIN_CLASS_NAME" value="model.NotePlayerTest" />
-      <option name="METHOD_NAME" value="testConstructor" />
+      <option name="METHOD_NAME" value="testChangeInstrument" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -327,10 +327,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Jinglifier (1)" />
-        <item itemvalue="Application.Jinglifier" />
+        <item itemvalue="JUnit.NotePlayerTest.testChangeInstrument" />
         <item itemvalue="JUnit.NotePlayerTest.testChangeBaseNote" />
+        <item itemvalue="Application.Jinglifier" />
         <item itemvalue="JUnit.NotePlayerTest.testPlayAnyNote" />
-        <item itemvalue="JUnit.NotePlayerTest.testConstructor" />
       </list>
     </recent_temporary>
   </component>
@@ -381,48 +381,48 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="NotePlayerTest_testPlayAnyNote - 2019.03.08 at 14h 40m 03s.xml">
-      <configuration name="NotePlayerTest.testPlayAnyNote" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotePlayerTest_testPlayAnyNote - 2019.03.08 at 14h 41m 53s.xml">
-      <configuration name="NotePlayerTest.testPlayAnyNote" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotePlayerTest_testPlayAnyNote - 2019.03.08 at 14h 43m 04s.xml">
-      <configuration name="NotePlayerTest.testPlayAnyNote" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotePlayerTest_testPlayAnyNote - 2019.03.08 at 14h 43m 50s.xml">
-      <configuration name="NotePlayerTest.testPlayAnyNote" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotePlayerTest_testPlayAnyNote - 2019.03.08 at 14h 44m 12s.xml">
-      <configuration name="NotePlayerTest.testPlayAnyNote" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotePlayerTest_testPlayAnyNote - 2019.03.08 at 17h 47m 53s.xml">
-      <configuration name="NotePlayerTest.testPlayAnyNote" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotePlayerTest_testPlayAnyNote - 2019.03.08 at 17h 48m 32s.xml">
-      <configuration name="NotePlayerTest.testPlayAnyNote" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NotePlayerTest_testChangeBaseNote - 2019.03.08 at 17h 49m 46s.xml">
-      <configuration name="NotePlayerTest.testChangeBaseNote" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="NotePlayerTest_testPlayAnyNote - 2019.04.29 at 12h 48m 34s.xml">
       <configuration name="NotePlayerTest.testPlayAnyNote" configurationId="JUnit" />
     </history-entry>
     <history-entry file="NotePlayerTest_testChangeBaseNote - 2019.04.29 at 12h 48m 46s.xml">
       <configuration name="NotePlayerTest.testChangeBaseNote" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="NotePlayerTest_testChangeBaseNote - 2019.04.30 at 21h 26m 04s.xml">
+      <configuration name="NotePlayerTest.testChangeBaseNote" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotePlayerTest_testChangeBaseNote - 2019.04.30 at 21h 26m 20s.xml">
+      <configuration name="NotePlayerTest.testChangeBaseNote" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotePlayerTest_testChangeBaseNote - 2019.04.30 at 21h 26m 28s.xml">
+      <configuration name="NotePlayerTest.testChangeBaseNote" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotePlayerTest_testChangeBaseNote - 2019.04.30 at 21h 26m 40s.xml">
+      <configuration name="NotePlayerTest.testChangeBaseNote" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotePlayerTest_testChangeBaseNote - 2019.04.30 at 21h 26m 49s.xml">
+      <configuration name="NotePlayerTest.testChangeBaseNote" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotePlayerTest_testChangeBaseNote - 2019.04.30 at 21h 26m 57s.xml">
+      <configuration name="NotePlayerTest.testChangeBaseNote" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotePlayerTest_testChangeInstrument - 2019.04.30 at 21h 47m 49s.xml">
+      <configuration name="NotePlayerTest.testChangeInstrument" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NotePlayerTest_testChangeInstrument - 2019.04.30 at 21h 47m 57s.xml">
+      <configuration name="NotePlayerTest.testChangeInstrument" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15100671" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15100671" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -496,51 +496,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/sound/ChannelData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/sound/MidiSynth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2691">
-          <caret line="121" column="34" selection-start-line="121" selection-start-column="34" selection-end-line="121" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/old_ui/PlayButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding>
             <element signature="e#164#165#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/model/TestNotePlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/model/NotePlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -552,16 +513,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/sound/MidiSynth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1702">
+          <caret line="121" column="34" selection-start-line="121" selection-start-column="34" selection-end-line="121" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/model/TestNotePlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#553#554#0" expanded="true" />
+            <element signature="e#630#631#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/sound/ChannelData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/model/NotePlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2221">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/ui/Jinglifier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="313">
+          <caret line="91" column="44" lean-forward="true" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#169#170#0" expanded="true" />
             <element signature="e#197#198#0" expanded="true" />
-            <element signature="e#1063#1278#0" expanded="true" />
-            <element signature="e#1277#1278#0" expanded="true" />
+            <element signature="e#1655#1886#0" expanded="true" />
+            <element signature="e#1885#1886#0" expanded="true" />
+            <element signature="e#2355#2586#0" expanded="true" />
+            <element signature="e#2585#2586#0" expanded="true" />
+            <element signature="e#2639#2854#0" expanded="true" />
+            <element signature="e#2853#2854#0" expanded="true" />
             <element signature="e#1210#1211#0" expanded="true" />
             <element signature="e#1251#1252#0" expanded="true" />
           </folding>

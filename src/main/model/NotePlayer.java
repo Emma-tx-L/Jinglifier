@@ -1,7 +1,6 @@
 package model;
 
 import sound.MidiSynth;
-
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 

@@ -28,7 +28,13 @@ class NotePlayerTest {
 
     @Test
     void testChangeBaseNote() {
-        player.setBaseNote(61);
-        player.playString("assertEquals(10, player.getInstrument())");
+        player.setBaseNote(70);
+        player.playString("assertEq");
+    }
+
+    @Test
+    void testChangeInstrument() {
+        player.setInstrument(80);
+        player.playString("assertEq");
     }
 }
